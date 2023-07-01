@@ -1,0 +1,114 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flix</title>
+
+    <link rel="shortcut icon" type="image/ico" href="images/icon.png" />
+    <link rel="stylesheet" href="lib/fontawesome.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../lib/swiper.css" />
+    <link rel="stylesheet" href="../css/details.css" />
+    <script src="../lib/swiper.js"></script>
+    <script src="../Stores/stores.js"></script>
+    <script src="../components/pagination.js"></script>
+    <script src="../components/articleDetails.js"></script>
+    <script src="../components/selectedType.js"></script>
+    <script src="../components/articlesList.js"></script>
+    <script src="../components/moviesList.js"></script>
+    <script src="../components/seriesList.js"></script>
+    <script src="../api/getDetails.js"></script>
+    <script src="../api/conf.js"></script>
+    <script src="../routes.js" defer></script>
+    <script src="../index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <!-- Logo avec lien vers ma page d'acceil -->
+        <div class="logo">
+          <a href="/index.html">
+            <button id="backButton" class="btn" onclick="">
+              back to movies
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Contenu -->
+    <main class="main-container">
+      <section class="details-section">
+        <article class="img-article container">
+          <a href="" class="movie-link">
+            <img src="../images/no-image.jpg" alt="Flix no image" />
+          </a>
+        </article>
+        <article class="details-article container">
+          <h4>Titre de mon article</h4>
+          <ul>
+            <li class="article-inf">
+              <span class="article-inf-name">inf: </span> details details
+            </li>
+            <li class="article-inf">
+              <span class="article-inf-name">inf: </span> details details
+            </li>
+            <li class="article-inf">
+              <span class="article-inf-name">inf: </span> details details
+            </li>
+            <li class="article-inf">
+              <span class="article-inf-name">inf: </span> details details
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="second-section">
+        <h4 id="info-title">Movie Info</h4>
+        <div>
+          <ul>
+            <li class="article-inf">
+              <span class="article-inf-name">inf: </span> details details
+            </li>
+            <li class="article-inf">
+              <span class="article-inf-name">inf: </span> details details
+            </li>
+            <li class="article-inf">
+              <span class="article-inf-name">inf: </span> details details
+            </li>
+            <li class="article-inf">
+              <span class="article-inf-name">inf: </span> details details
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer-->
+    <footer>
+      <div class="container">
+        <!-- Logo avec lien vers ma page d'acceil -->
+        <div class="logo">
+          <a href="index.html"> Flix </a>
+        </div>
+        <!-- navigation -->
+        <nav>
+          <ul class="nav-elements">
+            <li class="nav-element"><a href="">facebook</a></li>
+            <li class="nav-element"><a href="">instagram</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

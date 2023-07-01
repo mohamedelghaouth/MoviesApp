@@ -1,0 +1,136 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flix</title>
+
+    <link rel="shortcut icon" type="image/ico" href="images/icon.png" />
+    <link rel="stylesheet" href="lib/fontawesome.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="lib/swiper.css" /> -->
+    <link rel="stylesheet" href="./index.css" />
+    <!-- <script src="/lib/swiper.js"></script> -->
+    <script src="./Stores/stores.js"></script>
+    <script src="./components/form.js"></script>
+    <script src="./components/pagination.js"></script>
+    <script src="./components/selectedType.js"></script>
+    <script src="./components/articlesList.js"></script>
+    <script src="./components/moviesList.js"></script>
+    <script src="./components/seriesList.js"></script>
+    <script src="./components/swiper_per.js"></script>
+    <script src="./api/getPopulatArticles.js"></script>
+    <script src="./api/getPlayingNow.js"></script>
+    <script src="./api/getDetails.js"></script>
+    <script src="./api/search.js"></script>
+    <script src="./secure.js"></script>
+    <script src="./api/conf.js"></script>
+    <script src="./routes.js" defer></script>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <!-- Logo avec lien vers ma page d'acceil -->
+        <div class="logo">
+          <a href="/"> Flix </a>
+        </div>
+        <!-- navigation -->
+        <nav>
+          <ul class="nav-elements">
+            <li class="nav-element">
+              <button id="moviesButton" class="btn" onclick="selectMovies()">
+                Movies
+              </button>
+            </li>
+            <li class="nav-element">
+              <button id="seriesButton" class="btn" onclick="selectSeries()">
+                Tv Shows
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Contenu -->
+    <main class="main-container">
+      <section class="section1">
+        <h2>Watching now</h2>
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </section>
+      <section class="search-section">
+        <form class="search-form" id="searchForm">
+          <div class="search-input">
+            <input
+              type="text"
+              placeholder="Enter search term"
+              class=""
+              id="searchInput"
+              name="search-term"
+            />
+            <button class="btn" type="submit">search</button>
+          </div>
+        </form>
+      </section>
+      <section class="articles-list">
+        <h2 id="articles-list-title">POPULAR MOVIES</h2>
+        <section class="section-pagination">
+          <button id="backButton" class="btn" onclick="back()">Back</button>
+          <button id="nextButton" class="btn" onclick="next()">Next</button>
+        </section>
+        <div class="articles-list-container container">
+          <!-- <article>
+            <a href="" class="movie-link">
+              <img src="./images/no-image.jpg" alt="Flix no image" />
+            </a>
+            <div>
+              <h4>Titre de mon article</h4>
+              <p>Texte de mon article.</p>
+            </div>
+          </article> -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer-->
+    <footer>
+      <div class="container">
+        <!-- Logo avec lien vers ma page d'acceil -->
+        <div class="logo">
+          <a href="index.html"> Flix </a>
+        </div>
+        <!-- navigation -->
+        <nav>
+          <ul class="nav-elements">
+            <li class="nav-element"><a href="">facebook</a></li>
+            <li class="nav-element"><a href="">instagram</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
