@@ -1,4 +1,7 @@
 /** @format */
+import { constructArticleDetails } from "../components/articleDetails.js";
+import getOptions from "./conf.js";
+import { MOVIES, selectedType } from "../Stores/stores.js";
 
 function getArticleDetailsLink(id) {
   if (selectedType == undefined || selectedType == MOVIES) {
@@ -15,3 +18,5 @@ function getArticleDetails(id) {
     })
     .catch((err) => console.error(err));
 }
+
+export { getArticleDetails };

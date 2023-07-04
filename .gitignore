@@ -1,2 +1,3 @@
-secure.js
+node_modules/
+src/secure.js
 .idea/

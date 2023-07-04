@@ -1,4 +1,5 @@
 /** @format */
+import { SERIES, MOVIES, selectedType } from "../Stores/stores.js";
 
 function getSecondTitle() {
   if (selectedType == MOVIES) {
@@ -136,7 +137,7 @@ function constructBackButton() {
   }
 }
 
-function constructArticleDetails(article) {
+export function constructArticleDetails(article) {
   constructBackButton();
   constructDetailsSection(article);
   constructSecondSection(article);

@@ -1,4 +1,8 @@
 /** @format */
+import { selectMovies, selectSeries } from "./components/selectedType.js";
+import { getPopularArticles } from "./api/getPopulatArticles.js";
+import { getArticleDetails } from "./api/getDetails.js";
+import { MOVIES, setSelectedType } from "./Stores/stores.js";
 
 const route = {
   currentPage: window.location.pathname,
@@ -8,7 +12,7 @@ function setPathName() {
   route.currentPage = window.location.pathname;
 }
 
-function init() {
+export function init() {
   switch (route.currentPage) {
     case "":
     case "/":
@@ -26,7 +30,7 @@ function init() {
       break;
     case "/pages/details.html":
       let params = window.location.search.split("?");
-      selectedType = params[1].split("=")[1];
+      setSelectedType(params[1].split("=")[1]);
       let id = params[2].split("=")[1];
       getArticleDetails(id);
       setPathName();

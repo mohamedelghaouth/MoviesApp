@@ -1,4 +1,9 @@
 /** @format */
+import { updateMoviesList } from "../components/moviesList.js";
+import { updateSeriesList } from "../components/seriesList.js";
+import { setTotalPage } from "../Stores/stores.js";
+import getOptions from "./conf.js";
+import { selectedType, MOVIES, current_page } from "../Stores/stores.js";
 
 function getSearchArticlesLink(name) {
   if (selectedType == undefined || selectedType == MOVIES) {
@@ -15,7 +20,7 @@ function updateList(data) {
   updateSeriesList(data);
 }
 
-function searchForArticles(name) {
+export function searchForArticles(name) {
   fetch(getSearchArticlesLink(name), getOptions)
     .then((response) => response.json())
     .then((data) => {

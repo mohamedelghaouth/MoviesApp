@@ -1,4 +1,9 @@
 /** @format */
+import { setTotalPage } from "../Stores/stores.js";
+import getOptions from "./conf.js";
+import { selectedType, current_page, MOVIES } from "../Stores/stores.js";
+import { updateMoviesList } from "../components/moviesList.js";
+import { updateSeriesList } from "../components/seriesList.js";
 
 function getUpdateArticlesLink() {
   if (selectedType == undefined || selectedType == MOVIES) {
@@ -16,7 +21,7 @@ function updateArticles(data) {
   }
 }
 
-function getPopularArticles() {
+export function getPopularArticles() {
   fetch(getUpdateArticlesLink(), getOptions)
     .then((response) => response.json())
     .then((data) => {

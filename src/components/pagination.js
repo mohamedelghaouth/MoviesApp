@@ -1,5 +1,12 @@
 /** @format */
-function updateArticleList() {
+import { getSearchedElements } from "./form.js";
+import { getPopularArticles } from "../api/getPopulatArticles.js";
+import {
+  incrementCurrentPage,
+  decrementCurrentPage,
+} from "../Stores/stores.js";
+
+export function updateArticleList() {
   if (route.currentPage.includes("search-term")) {
     getSearchedElements();
   } else {
@@ -7,34 +14,34 @@ function updateArticleList() {
   }
 }
 
-function next() {
+export function next() {
   if (canGetNext()) {
     incrementCurrentPage();
     updateArticleList();
   }
 }
 
-function back() {
+export function back() {
   if (canGetBack()) {
     decrementCurrentPage();
     updateArticleList();
   }
 }
 
-function getButton(button) {
+export function getButton(button) {
   return document.getElementById(`${button}`);
 }
 
-function disableNextButton() {
+export function disableNextButton() {
   getButton("nextButton").setAttribute("disable", "true");
 }
-function enableNextButton() {
+export function enableNextButton() {
   getButton("nextButton").setAttribute("disable", "false");
 }
 
-function disableBackButton() {
+export function disableBackButton() {
   getButton("backButton").setAttribute("disable", "true");
 }
-function enableBackButton() {
+export function enableBackButton() {
   getButton("backButton").setAttribute("disable", "false");
 }

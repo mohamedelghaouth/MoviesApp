@@ -1,6 +1,5 @@
 /** @format */
-
-function getSearchedElement() {}
+import { searchForArticles } from "../api/search.js";
 
 function getSearchedText() {
   let value = document.getElementById("searchInput").value;
@@ -8,12 +7,12 @@ function getSearchedText() {
   return textToSearch;
 }
 
-function getSearchedElement(e) {
+export function getSearchedElement(e) {
   e.preventDefault();
   getSearchedElements();
 }
 
-function getSearchedElements() {
+export function getSearchedElements() {
   let searchedText = getSearchedText();
   if (searchedText.length != 0) {
     searchForArticles(searchedText);

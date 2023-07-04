@@ -1,6 +1,7 @@
 /** @format */
+import { constructArticleList } from "./articlesList.js";
 
-function updateSeriesList(series) {
+export function updateSeriesList(series) {
   let seriesListContainer = document.getElementsByClassName(
     "articles-list-container"
   )[0];

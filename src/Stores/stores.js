@@ -1,0 +1,56 @@
+/** @format */
+
+export const MOVIES = "movie";
+export const SERIES = "series";
+
+export let selectedType;
+
+export let article_details;
+
+export let current_page = 1;
+export let total_page = 1;
+
+export function setSelectedType(type) {
+  selectedType = type;
+}
+
+export function setTotalPage(ttlPage) {
+  total_page = ttlPage;
+}
+
+export function setCurrentPage(currentPage) {
+  current_page = currentPage;
+}
+
+export function incrementCurrentPage() {
+  setCurrentPage(current_page + 1);
+  if (current_page == total_page) {
+    disableNextButton();
+  }
+  if (current_page > 1) {
+    enableBackButton();
+  }
+}
+
+export function decrementCurrentPage() {
+  setCurrentPage(current_page - 1);
+  if (current_page <= 1) {
+    disableBackButton();
+  }
+  if (current_page < total_page) {
+    enableNextButton();
+  }
+}
+
+export function updatePaginationInfo(ttlPage, currentPage) {
+  setTotalPage(ttlPage);
+  setCurrentPage(currentPage);
+}
+
+export function canGetNext() {
+  return current_page < total_page;
+}
+
+export function canGetBack() {
+  return current_page > 1;
+}

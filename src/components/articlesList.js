@@ -1,4 +1,5 @@
 /** @format */
+import { selectedType, MOVIES } from "../Stores/stores.js";
 
 function constructArticleDate(article) {
   function getReleaseDate() {
@@ -39,7 +40,7 @@ function constructArticleSubDiv(article) {
 function constructArticleImage(article) {
   let image_url = article.poster_path
     ? `https://image.tmdb.org/t/p/w500/${article.poster_path}`
-    : "./images/no-image.jpg";
+    : "./src/images/no-image.jpg";
 
   let image = document.createElement("img");
   image.setAttribute("src", image_url);
@@ -61,7 +62,7 @@ function constructArticleLink(article) {
   return link;
 }
 
-function constructArticleList(articles) {
+export function constructArticleList(articles) {
   return articles.map((article) => {
     let domArticle = document.createElement("article");
     domArticle.appendChild(constructArticleLink(article));

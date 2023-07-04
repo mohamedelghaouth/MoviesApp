@@ -1,6 +1,13 @@
 /** @format */
+import { constructArticleList } from "./articlesList.js";
 
-function constructSwiperArticleList(articles) {
+// import Swiper bundle with all modules installed
+import Swiper from "swiper/bundle";
+
+// import styles bundle
+import "swiper/css/bundle";
+
+export function constructSwiperArticleList(articles) {
   let articlesElement = constructArticleList(articles);
   return articlesElement.map((article) => {
     let div = document.createElement("div");
@@ -12,7 +19,7 @@ function constructSwiperArticleList(articles) {
   });
 }
 
-function updateSwiper(articles) {
+export function updateSwiper(articles) {
   let swiperListContainer =
     document.getElementsByClassName("swiper-wrapper")[0];
 
@@ -22,7 +29,7 @@ function updateSwiper(articles) {
   initSwiper();
 }
 
-function initSwiper() {
+export function initSwiper() {
   const swiper = new Swiper(".swiper", {
     // Optional parameters
     direction: "horizontal",

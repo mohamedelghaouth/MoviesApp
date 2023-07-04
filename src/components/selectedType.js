@@ -1,4 +1,11 @@
 /** @format */
+import { getPopularArticles } from "../api/getPopulatArticles.js";
+import {
+  selectedType,
+  MOVIES,
+  SERIES,
+  setSelectedType,
+} from "../Stores/stores.js";
 
 function updateTitle() {
   let searchInput = document.getElementById("articles-list-title");
@@ -15,26 +22,26 @@ function updateElement() {
   updateInputPlaceHolder();
 }
 
-function selectMovies() {
+export function selectMovies() {
   let moviesButton = document.getElementById("moviesButton");
   let seriesButton = document.getElementById("seriesButton");
 
   moviesButton.classList.add("selected-btn");
   seriesButton.classList.remove("selected-btn");
 
-  selectedType = MOVIES;
+  setSelectedType(MOVIES);
   updateElement();
   getPopularArticles();
 }
 
-function selectSeries() {
+export function selectSeries() {
   let moviesButton = document.getElementById("moviesButton");
   let seriesButton = document.getElementById("seriesButton");
 
   moviesButton.classList.remove("selected-btn");
   seriesButton.classList.add("selected-btn");
 
-  selectedType = SERIES;
+  setSelectedType(SERIES);
   updateElement();
   getPopularArticles();
 }

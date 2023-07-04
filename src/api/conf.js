@@ -1,4 +1,5 @@
 /** @format */
+import { SECRET_TOKEN } from "../secure.js";
 
 const getOptions = {
   method: "GET",
@@ -7,3 +8,5 @@ const getOptions = {
     Authorization: SECRET_TOKEN,
   },
 };
+
+export default getOptions;
