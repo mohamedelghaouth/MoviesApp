@@ -19,14 +19,15 @@ export function init() {
     case "/MoviesApp":
     case "/front/index.html":
     case "/index.html":
-      // getNowPlayingArticles();
       getPopularArticles();
+
       let type = window.location.search.split("?type=")[1];
       if (type == undefined || type == MOVIES) {
         selectMovies();
       } else {
         selectSeries();
       }
+
       setPathName();
       break;
     case "/pages/details.html":
