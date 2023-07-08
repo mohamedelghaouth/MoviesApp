@@ -15,6 +15,7 @@ function setPathName() {
 export function init() {
   switch (route.currentPage) {
     case "":
+    case "/":
     case "/MoviesApp":
     case "/front/index.html":
     case "/index.html":
@@ -36,7 +37,6 @@ export function init() {
       setPathName();
       break;
     default:
-      console.log(window.location);
       break;
   }
 }
