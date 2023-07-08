@@ -12,7 +12,6 @@ function getArticleDetailsLink(id) {
 }
 
 function getArticleDetails(id) {
-  console.log("here", id);
   fetch(getArticleDetailsLink(id), getOptions)
     .then((response) => response.json())
     .then((data) => {
