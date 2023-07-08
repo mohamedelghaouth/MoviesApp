@@ -121,15 +121,15 @@ function constructBackButton() {
   if (selectedType == undefined || selectedType == MOVIES) {
     detailSection.innerHTML = `
         <a href="../index.html?type=${MOVIES}">
-        <button id="backButton" class="btn" onclick="">
+        <button id="backButton" class="btn">
             back to movies
         </button>
         </a>
     `;
   } else {
     detailSection.innerHTML = `
-        <a href="/index.html?type=${SERIES}">
-        <button id="backButton" class="btn" onclick="">
+        <a href="../index.html?type=${SERIES}">
+        <button id="backButton" class="btn">
             back to series
         </button>
         </a>
