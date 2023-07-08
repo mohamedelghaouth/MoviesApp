@@ -28,7 +28,7 @@ export function init() {
       }
       setPathName();
       break;
-    case "/front/pages/details.html":
+    case "/pages/details.html":
       let params = window.location.search.split("?");
       setSelectedType(params[1].split("=")[1]);
       let id = params[2].split("=")[1];
