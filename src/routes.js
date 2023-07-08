@@ -16,9 +16,8 @@ export function init() {
   switch (route.currentPage) {
     case "":
     case "/":
-    case "/MoviesApp/":
-    case "/front/index.html":
-    case "/index.html":
+    case "MoviesApp/":
+    case "/MoviesApp/index.html":
       getPopularArticles();
 
       let type = window.location.search.split("?type=")[1];
