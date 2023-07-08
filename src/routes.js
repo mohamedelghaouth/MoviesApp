@@ -16,7 +16,7 @@ export function init() {
   switch (route.currentPage) {
     case "":
     case "/":
-    case "/MoviesApp":
+    case "/MoviesApp/":
     case "/front/index.html":
     case "/index.html":
       getPopularArticles();
