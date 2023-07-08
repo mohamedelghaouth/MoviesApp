@@ -1,13 +1,20 @@
 /** @format */
-import { getSearchedElements } from "./form.js";
+import { getSearchedElements, searchedTextNotEmpty } from "./form.js";
 import { getPopularArticles } from "../api/getPopulatArticles.js";
 import {
   incrementCurrentPage,
   decrementCurrentPage,
 } from "../Stores/stores.js";
+import {
+  canGetBack,
+  canGetNext,
+  SEARCH_REQUEST,
+  POPULAR_REQUEST,
+  getLastRequest,
+} from "../Stores/stores.js";
 
 export function updateArticleList() {
-  if (route.currentPage.includes("search-term")) {
+  if (getLastRequest() == SEARCH_REQUEST && searchedTextNotEmpty()) {
     getSearchedElements();
   } else {
     getPopularArticles();

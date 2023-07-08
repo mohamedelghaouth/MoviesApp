@@ -1,5 +1,10 @@
 /** @format */
 import { searchForArticles } from "../api/search.js";
+import { getLastSearchedText } from "../Stores/stores.js";
+
+export function searchedTextNotEmpty() {
+  return getSearchedText().length != 0;
+}
 
 function getSearchedText() {
   let value = document.getElementById("searchInput").value;

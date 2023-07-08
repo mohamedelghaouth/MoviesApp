@@ -4,7 +4,7 @@ import { getPopularArticles } from "./api/getPopulatArticles.js";
 import { getArticleDetails } from "./api/getDetails.js";
 import { MOVIES, setSelectedType } from "./Stores/stores.js";
 
-const route = {
+export const route = {
   currentPage: window.location.pathname,
 };
 
@@ -15,8 +15,8 @@ function setPathName() {
 export function init() {
   switch (route.currentPage) {
     case "":
-    case "/":
     case "/MoviesApp":
+    case "/front/index.html":
     case "/index.html":
       // getNowPlayingArticles();
       getPopularArticles();
@@ -28,7 +28,7 @@ export function init() {
       }
       setPathName();
       break;
-    case "/pages/details.html":
+    case "/front/pages/details.html":
       let params = window.location.search.split("?");
       setSelectedType(params[1].split("=")[1]);
       let id = params[2].split("=")[1];
@@ -36,6 +36,7 @@ export function init() {
       setPathName();
       break;
     default:
+      console.log(window.location);
       break;
   }
 }

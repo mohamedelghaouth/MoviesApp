@@ -14,6 +14,7 @@ function updateTitle() {
 
 function updateInputPlaceHolder() {
   let searchInput = document.getElementById("searchInput");
+  searchInput.value = "";
   searchInput.setAttribute("placeholder", `search for ${selectedType}`);
 }
 

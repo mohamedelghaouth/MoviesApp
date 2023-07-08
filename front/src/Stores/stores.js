@@ -1,7 +1,21 @@
 /** @format */
 
+import {
+  enableNextButton,
+  disableBackButton,
+  disableNextButton,
+  enableBackButton,
+} from "../components/pagination.js";
+
 export const MOVIES = "movie";
 export const SERIES = "series";
+
+export const SEARCH_REQUEST = "search";
+export const POPULAR_REQUEST = "popular";
+
+export let lastRequest;
+
+export let lastSearchedText;
 
 export let selectedType;
 
@@ -53,4 +67,16 @@ export function canGetNext() {
 
 export function canGetBack() {
   return current_page > 1;
+}
+
+export function setLastRequest(_lastRequest) {
+  lastRequest = _lastRequest;
+}
+
+export function getLastRequest() {
+  return lastRequest;
+}
+
+export function getLastSearchedText() {
+  return lastSearchedText;
 }

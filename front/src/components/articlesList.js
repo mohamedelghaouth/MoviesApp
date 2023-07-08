@@ -53,7 +53,7 @@ function constructArticleLink(article) {
   let link = document.createElement("a");
   link.setAttribute(
     "href",
-    `/pages/details.html?type=${selectedType}?id=${article.id}`
+    `./pages/details.html?type=${selectedType}?id=${article.id}`
   );
   link.classList.add("article-link");
 

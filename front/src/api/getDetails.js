@@ -2,15 +2,17 @@
 import { constructArticleDetails } from "../components/articleDetails.js";
 import getOptions from "./conf.js";
 import { MOVIES, selectedType } from "../Stores/stores.js";
+import { SERVER_PATH } from "../../env.js";
 
 function getArticleDetailsLink(id) {
   if (selectedType == undefined || selectedType == MOVIES) {
-    return `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
+    return `${SERVER_PATH}movie/${id}?language=en-US`;
   }
-  return `https://api.themoviedb.org/3/tv/${id}?language=en-US`;
+  return `${SERVER_PATH}tv/${id}?language=en-US`;
 }
 
 function getArticleDetails(id) {
+  console.log("here", id);
   fetch(getArticleDetailsLink(id), getOptions)
     .then((response) => response.json())
     .then((data) => {

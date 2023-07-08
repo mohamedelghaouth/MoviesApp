@@ -1,0 +1,4 @@
+/** @format */
+
+export let SECRET_TOKEN =
+  "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NzBiMmY2YjNiNTljZGNkNmJlZjM3OTE3OGMwMjNhMSIsInN1YiI6IjY0OTlhY2QwNmY0M2VjMDEzOTliMzZiMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.K1waOg57Xdbvj1PnkLDA1o1-8sZskYeIOcQ2IavaDNk";
