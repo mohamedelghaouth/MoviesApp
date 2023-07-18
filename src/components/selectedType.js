@@ -1,5 +1,7 @@
 /** @format */
 import { getPopularArticles } from "../api/getPopulatArticles.js";
+import { getNowPlayingArticles } from "../api/getPlayingNow.js";
+
 import {
   selectedType,
   MOVIES,
@@ -32,6 +34,7 @@ export function selectMovies() {
 
   setSelectedType(MOVIES);
   updateElement();
+  getNowPlayingArticles();
   getPopularArticles();
 }
 
@@ -44,5 +47,6 @@ export function selectSeries() {
 
   setSelectedType(SERIES);
   updateElement();
+  getNowPlayingArticles();
   getPopularArticles();
 }

@@ -5,6 +5,8 @@ import { getSearchedElement } from "./components/form.js";
 import { selectMovies, selectSeries } from "./components/selectedType.js";
 import { back, next } from "./components/pagination.js";
 
+// import styles bundle
+
 document.addEventListener("DOMContentLoaded", init);
 
 document.getElementById("searchForm") &&

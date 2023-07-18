@@ -1,6 +1,8 @@
 /** @format */
 import getOptions from "./conf.js";
 import { SERVER_PATH } from "../../env.js";
+import { updateSwiper } from "../components/swiper_per.js";
+import { selectedType, MOVIES } from "../Stores/stores.js";
 
 function getNowPlayingLink() {
   if (selectedType == undefined || selectedType == MOVIES) {

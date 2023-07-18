@@ -23,6 +23,38 @@
     <!-- <script src="/lib/swiper.js"></script> -->
 
     <script src="./src/index.js" type="module" defer></script>
+    <script type="module">
+      import Swiper from "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs";
+
+      const swiper = new Swiper(".swiper", {
+        direction: "horizontal",
+        slidesPerView: 3,
+        speed: 400,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          500: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          700: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+          },
+        },
+      });
+    </script>
   </head>
   <body>
     <header>
@@ -47,7 +79,7 @@
     <!-- Contenu -->
     <main class="main-container">
       <section class="section1">
-        <h2>Watching now</h2>
+        <h2>Playing now</h2>
         <div class="swiper">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">

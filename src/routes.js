@@ -3,6 +3,7 @@ import { selectMovies, selectSeries } from "./components/selectedType.js";
 import { getPopularArticles } from "./api/getPopulatArticles.js";
 import { getArticleDetails } from "./api/getDetails.js";
 import { MOVIES, setSelectedType } from "./Stores/stores.js";
+import { getNowPlayingArticles } from "./api/getPlayingNow.js";
 
 export const route = {
   currentPage: window.location.pathname,
@@ -20,9 +21,10 @@ export function init() {
     case "/index.html":
     case "/MoviesApp/pages/index.html":
     case "/MoviesApp/index.html":
-      getPopularArticles();
-
       let type = window.location.search.split("?type=")[1];
+      setSelectedType(type);
+      getNowPlayingArticles();
+      getPopularArticles();
       if (type == undefined || type == MOVIES) {
         selectMovies();
       } else {

@@ -2,10 +2,8 @@
 import { constructArticleList } from "./articlesList.js";
 
 // import Swiper bundle with all modules installed
-import Swiper from "swiper/bundle";
 
 // import styles bundle
-import "swiper/css/bundle";
 
 export function constructSwiperArticleList(articles) {
   let articlesElement = constructArticleList(articles);
@@ -26,20 +24,19 @@ export function updateSwiper(articles) {
   let swiperArticles = constructSwiperArticleList(articles);
 
   swiperListContainer.replaceChildren(...swiperArticles);
-  initSwiper();
 }
 
-export function initSwiper() {
-  const swiper = new Swiper(".swiper", {
-    // Optional parameters
-    direction: "horizontal",
+// export function initSwiper() {
+//   const swiper = new Swiper(".swiper", {
+//     // Optional parameters
+//     direction: "horizontal",
 
-    freeMode: true,
-    loop: true,
+//     freeMode: true,
+//     loop: true,
 
-    autoPlay: {
-      delay: 4000,
-      disableOnINteraction: false,
-    },
-  });
-}
+//     autoPlay: {
+//       delay: 4000,
+//       disableOnINteraction: false,
+//     },
+//   });
+// }
