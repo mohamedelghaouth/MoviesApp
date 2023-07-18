@@ -28,12 +28,17 @@
 
       const swiper = new Swiper(".swiper", {
         direction: "horizontal",
-        slidesPerView: 3,
+        slidesPerView: 5,
+        createElements: true,
         speed: 400,
         loop: true,
         autoplay: {
-          delay: 3000,
+          delay: 300,
           disableOnInteraction: false,
+        },
+        keyboard: {
+          enabled: true,
+          onlyInViewport: false,
         },
         navigation: {
           nextEl: ".swiper-button-next",
@@ -41,11 +46,11 @@
         },
         breakpoints: {
           500: {
-            slidesPerView: 2,
+            slidesPerView: 5,
             spaceBetween: 15,
           },
           700: {
-            slidesPerView: 3,
+            slidesPerView: 5,
             spaceBetween: 15,
           },
           1200: {
