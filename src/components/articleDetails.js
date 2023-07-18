@@ -80,6 +80,12 @@ function getTitle(article) {
   return article.name;
 }
 
+function getBackDropPath(article) {
+  return article.backdrop_path
+    ? `https://image.tmdb.org/t/p/w500/${article.backdrop_path}`
+    : "./images/no-image.jpg";
+}
+
 function getPosterPath(article) {
   return article.poster_path
     ? `https://image.tmdb.org/t/p/w500/${article.poster_path}`
@@ -137,7 +143,19 @@ function constructBackButton() {
   }
 }
 
+function updateMainContainerBackground(article) {
+  console.log(
+    "🚀 ~ file: articleDetails.js:141 ~ updateMainContainerBackground ~ article:",
+    article
+  );
+  const myElement = document.getElementById("main-container-id");
+  myElement.style.background = `url(${getBackDropPath(
+    article
+  )}) no-repeat center center/cover`;
+}
+
 export function constructArticleDetails(article) {
+  updateMainContainerBackground(article);
   constructBackButton();
   constructDetailsSection(article);
   constructSecondSection(article);
